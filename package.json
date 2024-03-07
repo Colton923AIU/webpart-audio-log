@@ -1,5 +1,5 @@
 {
-  "name": "spfx-template",
+  "name": "webpart-audio-log",
   "version": "0.0.1",
   "private": true,
   "engines": {
@@ -23,20 +23,20 @@
     "react-dom": "17.0.1"
   },
   "devDependencies": {
-    "@microsoft/rush-stack-compiler-4.7": "0.1.0",
-    "@rushstack/eslint-config": "2.5.1",
     "@microsoft/eslint-config-spfx": "1.18.2",
     "@microsoft/eslint-plugin-spfx": "1.18.2",
+    "@microsoft/rush-stack-compiler-4.7": "0.1.0",
     "@microsoft/sp-build-web": "^1.18.2",
     "@microsoft/sp-module-interfaces": "1.18.2",
+    "@rushstack/eslint-config": "2.5.1",
     "@types/react": "17.0.45",
     "@types/react-dom": "17.0.17",
     "@types/webpack-env": "~1.15.2",
-    "typescript": "^5.3.3",
+    "ajv": "^6.12.5",
     "eslint": "8.7.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "gulp": "4.0.2",
-    "ajv": "^6.12.5",
-    "spfx-fast-serve-helpers": "~1.18.0"
+    "spfx-fast-serve-helpers": "~1.18.0",
+    "typescript": "^5.3.3"
   }
 }

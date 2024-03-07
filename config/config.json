@@ -5,14 +5,11 @@
     "template-web-part": {
       "components": [
         {
-          "entrypoint": "./lib/webparts/template/TemplateWebPart.js",
-          "manifest": "./src/webparts/template/TemplateWebPart.manifest.json"
+          "entrypoint": "./lib/webparts/audio-log/AudioLogWebPart.js",
+          "manifest": "./src/webparts/audio-log/AudioLogWebPart.manifest.json"
         }
       ]
     }
   },
-  "externals": {},
-  "localizedResources": {
-    "TemplateWebPartStrings": "lib/webparts/template/loc/{locale}.js"
-  }
+  "externals": {}
 }
