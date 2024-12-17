@@ -2,15 +2,18 @@ import * as React from "react";
 import { ISVGProps } from "./svg.types";
 import styles from "./SVG.module.scss";
 
-const Play = ({ onClick, styleProps }: ISVGProps) => {
-  const w = () => {
+const Play: ({ onClick, styleProps }: ISVGProps) => JSX.Element = ({
+  onClick,
+  styleProps,
+}: ISVGProps) => {
+  const w: () => string | number = () => {
     let w: string | number = "50px";
     if (styleProps?.width) {
       w = styleProps.width;
     }
     return w;
   };
-  const h = () => {
+  const h: () => string | number = () => {
     let h: string | number = "50px";
     if (styleProps?.height) {
       h = styleProps.height;

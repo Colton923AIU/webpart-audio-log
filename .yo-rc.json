@@ -7,13 +7,13 @@
       "@microsoft/microsoft-graph-client": "3.0.2",
       "@microsoft/teams-js": "2.12.0"
     },
-    "version": "1.18.2",
+    "version": "1.19.0",
     "libraryName": "spfx-audio-log",
     "libraryId": "f639c916-4b44-461d-9984-ad7aa4e3c35f",
     "environment": "spo",
     "packageManager": "npm",
     "solutionName": "audio-log-webpart",
-    "solutionShortDescription": "audio-log-webpart description",
+    "solutionShortDescription": "audio-log-webpart",
     "skipFeatureDeployment": true,
     "isDomainIsolated": false,
     "componentType": "webpart"

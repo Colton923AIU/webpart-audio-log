@@ -2,6 +2,7 @@ import * as React from "react";
 import type { IAudioLogProps } from "./IAudioLogProps";
 import styles from "./AudioLog.module.scss";
 import AudioItem from "../../../components/AudioItem";
+import useSharePointListData from "../../../utils/hooks/useSharePointListData";
 
 export type TAudioItem = {
   id: string;
@@ -9,6 +10,14 @@ export type TAudioItem = {
 };
 
 const AudioLog: React.FC<IAudioLogProps> = (props: IAudioLogProps) => {
+  const { absoluteUrl, spHttpClient, spListLink } = { ...props };
+  const [data] = useSharePointListData({
+    client: spHttpClient,
+    absoluteUrl: absoluteUrl,
+    spListLink: spListLink,
+  });
+  console.log("data: ", data);
+
   const TestItems: TAudioItem[] = [
     {
       id: "a34a",
@@ -58,9 +67,13 @@ const AudioLog: React.FC<IAudioLogProps> = (props: IAudioLogProps) => {
         <span>audio log</span>
       </div>
       <div className={`${styles.items} ${styles.scroll_y}`}>
-        {TestItems.map((audioItem) => {
+        {TestItems.map((audioItem, index) => {
           return (
-            <AudioItem audioFile={audioItem.audioFile} id={audioItem.id} />
+            <AudioItem
+              key={index}
+              audioFile={audioItem.audioFile}
+              id={audioItem.id}
+            />
           );
         })}
       </div>

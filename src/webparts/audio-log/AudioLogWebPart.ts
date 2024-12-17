@@ -1,6 +1,10 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
-import { type IPropertyPaneConfiguration } from "@microsoft/sp-property-pane";
+import * as strings from "AudioLogWebPartStrings";
+import {
+  PropertyPaneTextField,
+  type IPropertyPaneConfiguration,
+} from "@microsoft/sp-property-pane";
 import { BaseClientSideWebPart } from "@microsoft/sp-webpart-base";
 
 import AudioLog from "./components/AudioLog";
@@ -8,6 +12,8 @@ import { IAudioLogProps } from "./components/IAudioLogProps";
 
 export interface IAudioLogWebPartProps {
   description: string;
+  spListLink: string;
+  absoluteUrl: string;
 }
 
 export default class AudioLogWebPart extends BaseClientSideWebPart<IAudioLogWebPartProps> {
@@ -16,6 +22,9 @@ export default class AudioLogWebPart extends BaseClientSideWebPart<IAudioLogWebP
       AudioLog,
       {
         userDisplayName: this.context.pageContext.user.displayName,
+        spListLink: this.properties.spListLink,
+        absoluteUrl: this.context.pageContext.web.absoluteUrl,
+        spHttpClient: this.context.spHttpClient,
       }
     );
 
@@ -35,8 +44,11 @@ export default class AudioLogWebPart extends BaseClientSideWebPart<IAudioLogWebP
           },
           groups: [
             {
-              groupName: "",
-              groupFields: [],
+              groupFields: [
+                PropertyPaneTextField("spListLink", {
+                  label: strings.SPListLinkLabel,
+                }),
+              ],
             },
           ],
         },
